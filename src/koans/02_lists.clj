@@ -21,7 +21,7 @@
   (= '(:a :b :c :d :e) (cons :a '(:b :c :d :e)))
 
   "Conjoining an element to a list isn't hard either"
-  (= '(:a :b :c :d :e) (conj '(:a :b :c :d) :e))
+  (= '(:e :a :b :c :d) (conj '(:a :b :c :d) :e))
 
   "You can use a list like a stack to get the first element"
   (= :a (peek '(:a :b :c :d :e)))
@@ -36,7 +36,7 @@
             "No dice!")))
 
   "The rest of nothing isn't so strict"
-  (= nil (try
+  (= '() (try
           (rest '())
           (catch IllegalStateException e
             "No dice!"))))
